@@ -1,0 +1,24 @@
+{
+  "name": "node-red-contrib-uffda-sparkpost",
+  "version": "1.0.2",
+  "description": "",
+  "main": "sparkpost.js",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "node-red": {
+    "nodes": {
+      "sparkpost": "sparkpost.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-user/repo-url.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

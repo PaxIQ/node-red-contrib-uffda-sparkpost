@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    RED.nodes.registerType('sparkpost', {
+        category: 'function',
+        color: '#c32b3a',
+        defaults: {
+            name: {value: ""},
+            templateId: {value: ""},
+            apiKey: {value: ""},
+            recipient: {value: ""},
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.png",
+        label: function() {
+            return this.name || "sparkpost";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="sparkpost">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-templateId"><i class="icon-tag"></i>Template ID:</label>
+        <input type="text" id="node-input-templateId" placeholder="Template ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-apiKey"><i class="icon-tag"></i>API Key:</label>
+        <input type="text" id="node-input-apiKey" placeholder="API Key">
+    </div>
+    <div class="form-row">
+        <label for="node-input-recipient"><i class="icon-tag"></i>Recipient:</label>
+        <input type="text" id="node-input-recipient" placeholder="John@Doe.com">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="sparkpost">
+    <p>A node to send emails via SparkPost using their templating system. Anything included in the payload will be sent as substitution_data to SparkPost.</p>
+</script>
