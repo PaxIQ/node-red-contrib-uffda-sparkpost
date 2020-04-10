@@ -16,19 +16,20 @@ module.exports = function(RED) {
         // node.apiKey = config.apiKey
         // node.to = config.to
 
+        let emails = config.recipient.split(',');
+        let recipients = [];
+
+        for (let i = 0; i < emails.length; i++) {
+            emails[i] = emails[i].trim()
+            recipients.push({address: {email: emails[i]}})
+        };
+
         let payload = {
             content: {
                 template_id: config.templateId
             },
             substitution_data: "",
-            recipients: [
-                {
-                    address: {
-                        email: config.recipient,
-                        name: config.name
-                    }
-                }
-            ]
+            recipients: recipients
         }
 
         node.on('input', async function(msg) {
